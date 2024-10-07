@@ -10,29 +10,52 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  background-color: #f5f5f5; /* Light background */
-  display: flex; /* Flexbox to center the form */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const CurrencyIcon = styled.div`
   position: absolute;
-  animation: float 3s ease-in-out infinite;
+  animation: float ${(props) => props.duration}s ease-in-out infinite;
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+  }
 `;
 
 const SectionWrapper = styled.div`
   position: relative;
   z-index: 2;
-  max-width: 400px; /* Set a max width for the form */
-  width: 90%; /* Responsive width */
+  max-width: 400px;
+  width: 90%;
   margin: auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1); /* Light background with transparency */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  @media (max-width: 768px) {
+    max-width: 320px;
+    padding: 15px;
+  }
 `;
 
 const TopSuggestLogin = styled.div`
@@ -59,7 +82,8 @@ const InputWrapper = styled.div`
     transition: border-color 0.3s;
 
     &:focus {
-      border-color: #007bff; /* Focused border color */
+      border-color: #007bff;
+      outline: none;
     }
   }
 
@@ -71,13 +95,12 @@ const InputWrapper = styled.div`
     color: #999;
     pointer-events: none;
 
-    /* Input focus styling */
     input:focus + &,
     input:not(:placeholder-shown) + & {
       top: -10px;
       left: 5px;
       font-size: 12px;
-      color: #007bff; /* Color when focused */
+      color: #007bff;
     }
   }
 `;
@@ -85,7 +108,7 @@ const InputWrapper = styled.div`
 const RegisterButton = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: #007bff; /* Button color */
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -93,7 +116,7 @@ const RegisterButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3; /* Darker on hover */
+    background-color: #0056b3;
   }
 `;
 
@@ -129,11 +152,10 @@ const RegisterScreen = () => {
     }
   };
 
-  // Function to generate random positions for the icons
   const generateRandomPositions = () => {
     const positions = [];
     const icons = [btc, eur, usd];
-    for (let i = 0; i < 10; i++) { // Change number for more icons
+    for (let i = 0; i < 15; i++) { // Added more icons
       const icon = icons[Math.floor(Math.random() * icons.length)];
       const top = Math.random() * 100;
       const left = Math.random() * 100;
@@ -142,7 +164,6 @@ const RegisterScreen = () => {
     return positions;
   };
 
-  // Store generated positions in a state
   const [iconPositions, setIconPositions] = useState([]);
 
   useEffect(() => {
@@ -156,6 +177,7 @@ const RegisterScreen = () => {
         <CurrencyIcon
           key={index}
           style={{ top: pos.top, left: pos.left }}
+          duration={Math.random() * 3 + 2} // Randomize between 2s and 5s
         >
           <img src={pos.icon} alt="currency" />
         </CurrencyIcon>
@@ -173,7 +195,7 @@ const RegisterScreen = () => {
               type="text"
               required
               id="name"
-              placeholder=" "
+              placeholder=" " // This placeholder disappears when input begins
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
