@@ -19,7 +19,7 @@ const EditProfile = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`/user/${id}`, config);
+                const response = await axios.get(`https://crypto-euug.onrender.com/user/${id}`, config);
                 setUsername(response.data.username);
                 setBTC(response.data.BTC);
                 setEUR(response.data.EUR);
@@ -44,7 +44,7 @@ const EditProfile = () => {
         formdata.append("USD", USD);
 
         try {
-            const { data } = await axios.post(`/user/editProfile/${id}`, formdata, config);
+            const { data } = await axios.post(`https://crypto-euug.onrender.com/user/editProfile/${id}`, formdata, config);
             setSuccess('Edit Profile successfully');
             // Redirect or handle success
         } catch (error) {

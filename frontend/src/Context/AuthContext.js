@@ -15,7 +15,7 @@ const AuthContextProvider = (props) => {
   useEffect(() => {
     const controlAuth = async () => {
       try {
-        const { data } = await axios.get("/auth/private", config);
+        const { data } = await axios.get("https://crypto-euug.onrender.com/auth/private", config);
         setActiveUser(data.user);
       } catch (error) {
         localStorage.removeItem("authToken");

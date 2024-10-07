@@ -36,7 +36,7 @@ const AddStory = () => {
         formdata.append("content", content)
 
         try {
-            const { data } = await axios.post("/story/addstory", formdata, config)
+            const { data } = await axios.post("https://crypto-euug.onrender.com/story/addstory", formdata, config)
             setSuccess('Add story successfully ')
 
             clearInputs()

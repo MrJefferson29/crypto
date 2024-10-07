@@ -12,7 +12,7 @@ const LoginScreen = () => {
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/auth/login", { email, password });
+      const { data } = await axios.post("https://crypto-euug.onrender.com/auth/login", { email, password });
       localStorage.setItem("authToken", data.token);
 
       setTimeout(() => {

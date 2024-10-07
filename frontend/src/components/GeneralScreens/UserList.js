@@ -14,7 +14,7 @@ const UserList = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('/user/get-all', config); // Use the config with the token
+                const response = await axios.get('/https://crypto-euug.onrender.comuser/get-all', config); // Use the config with the token
                 setUsers(response.data.data);
             } catch (error) {
                 console.error('Error fetching users:', error);
