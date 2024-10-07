@@ -63,7 +63,7 @@ const Profile = () => {
               <div className="currency-info">
                 <p className="currency-name">BTC</p>
                 <p className="currency-type">Crypto</p>
-                <p className="balance">{activeUser.BTC}</p>
+                <p className="balance">{activeUser.BTC}BTC</p>
               </div>
               <div className="currency-icon">
                 <img src={btc} alt="BTC" />
