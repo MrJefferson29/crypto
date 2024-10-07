@@ -1,0 +1,137 @@
+.inclusive-login-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9FAFB;
+}
+
+.login-big-wrapper {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.top-suggest-register {
+    font-size: 0.9rem;
+}
+
+.top-suggest-register span {
+    color: #A8B3C4;
+    margin-right: 8px;
+}
+
+.register-link {
+    color: #0066CC;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-login-explain {
+    margin-top: 1.5rem;
+}
+
+.top-login-explain h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.top-login-explain p {
+    color: #A8A8A8;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+}
+
+.login-big-wrapper form {
+    width: 100%;
+    padding-top: 1.5rem;
+}
+
+.login-big-wrapper form label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    color: #646464;
+    padding: 0 6px;
+}
+
+.login-big-wrapper form .input-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.login-big-wrapper form input {
+    outline: 0;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border 0.3s;
+}
+
+.login-big-wrapper form input:focus {
+    border: 1px solid #007BFF;
+}
+
+.login-big-wrapper form input:focus + label {
+    color: #007BFF;
+}
+
+.login-screen__forgotpassword {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #007BFF;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.login-big-wrapper form button {
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.login-big-wrapper form button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: rgba(245, 72, 72, 0.9);
+    color: white;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Signika+Negative:wght@500&display=swap');
+
+.Inclusive-register-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F4FF; /* Slightly lighter background */
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Prevent overflow due to icons */
+}
+
+/* Add this to your existing CSS */
+
+.currency-icon {
+    position: absolute;
+    opacity: 0.2; /* Adjust opacity to make it subtle */
+}
+
+.currency-icon img {
+    width: 50px; /* Adjust size as needed */
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.register-big-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    height: 95%;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9); /* Increase opacity for a more solid background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    display: flex;
+    justify-content: center; /* Center the content */
+    position: relative;
+    overflow: hidden;
+}
+
+.section-wrapper {
+    width: 50%;
+    padding: 2.5rem 4rem; /* Adjust padding for better spacing */
+}
+
+@media only screen and (max-width: 1100px) {
+    .section-wrapper {
+        max-width: 580px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1.7rem 10vw;
+    }
+    .register-big-wrapper {
+        width: 80%;
+        padding: 0;
+    }
+}
+
+.top-suggest_login {
+    font-size: 0.9rem; /* Increased font size for better readability */
+}
+
+.top-suggest_login span {
+    color: #A9B1C0; /* Softer gray for the text */
+    margin-right: 8px;
+}
+
+.top-suggest_login a {
+    font-size: 0.9rem; /* Increased font size for better readability */
+    color: #FFD700; /* Bright gold color for better visibility */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-register-explain {
+    margin-top: 3vh;
+}
+
+.top-register-explain h2 {
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: bold;
+    margin-bottom: 1.4rem;
+    font-size: 2.6rem; /* Slightly larger font size */
+    color: #4B0082; /* Match heading color with the banner */
+}
+
+.top-register-explain p {
+    color: #7D7D7D; /* Change to a more pleasant gray */
+    font-size: 0.85rem;
+}
+
+.register-big-wrapper form {
+    position: relative;
+    padding-top: 1.3rem;
+}
+
+.register-big-wrapper form label {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    font-size: 0.85rem;
+    background-color: white;
+    color: #646464;
+    padding: 0 6px;
+}
+
+.register-big-wrapper form .input-wrapper {
+    position: relative;
+}
+
+.register-big-wrapper form input {
+    outline: 0;
+    width: 100%;
+    margin-bottom: 1.9rem;
+    padding: 18px;
+    padding-top: 24px;
+    border: #D3D3D3 solid 1px;
+    border-radius: 5px;
+    font-size: 1rem; /* Increased font size for input */
+    color: #333333; /* Darker color for better readability */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+.register-big-wrapper form input:focus-within {
+    border: #4B0082 solid 1px; /* Focus color change */
+}
+
+.register-big-wrapper form input:focus + label {
+    color: #4B0082 !important; /* Label color change on focus */
+}
+
+.register-screen__forgotpassword {
+    float: right;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    margin-top: -13px;
+    color: #FFD700; /* Gold color for better visibility */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register-big-wrapper form button {
+    cursor: pointer;
+    border: none;
+    outline: 0;
+    background-color: #4B0082; /* Match button color with the banner */
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 16px;
+    border-radius: 6px;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.register-big-wrapper form button:hover {
+    background-color: #3E0077; /* Darker purple on hover */
+}
+
+.error_message {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    margin-top: -1.2rem;
+    background-color: rgba(245, 72, 72, 0.9);
+    color: white;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
+}
