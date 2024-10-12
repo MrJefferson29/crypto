@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { Row, Col, Container } from "react-bootstrap";
 import avatar from "../../Assets/avatar.png";
 import btc from "../../Assets/btc.png";
-import usd from "../../Assets/usd.png";
-import eur from "../../Assets/eur.png";
+import usd from "../../Assets/usdt.png";
+import eur from "../../Assets/ethereum.png";
 import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
 import qr from '../../Assets/qr.jpg'
