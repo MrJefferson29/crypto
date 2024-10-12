@@ -21,7 +21,7 @@ const StyledModalFooter = styled(Modal.Footer)`
 const Pop = ({ show, handleClose }) => {
 
   const handleEmailClick = () => {
-    const email = "myprivatecrypto.help@gmail.com";
+    const email = "help@myprivatecryptowallet.com";
     const subject = `Wallet #4t345h65l9`;
     const body =
       `Hello MPCT Team,\n\n` +
