@@ -41,13 +41,13 @@ const Pop = ({ show, handleClose }) => {
       <StyledModalBody>
         <p>
           <strong>Sorry!</strong> Due to system maintenance, we cannot process
-          deposits or withdrawals. Please contact our support team right away
+           withdrawals. Please contact our support team right away
           to process your transaction.
         </p>
       </StyledModalBody>
       <StyledModalFooter>
         <Button variant="secondary" onClick={handleEmailClick}>
-          Cntact Us Here
+          Contact Us Here
         </Button>
       </StyledModalFooter>
     </Modal>

@@ -15,6 +15,7 @@ import p3 from "../../Assets/p3.png";
 import p4 from "../../Assets/p4.png";
 import p5 from "../../Assets/p5.png";
 import Pop from '../GeneralScreens/Pop'
+import Dep from '../GeneralScreens/Dep'
 
 const Profile = () => {
   const { config } = useContext(AuthContext);
@@ -22,9 +23,13 @@ const Profile = () => {
   const { activeUser } = useContext(AuthContext);
   const [randomImage, setRandomImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [showModel, setShowModel] = useState(false);
+
 
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
+  const handleOpenModel = () => setShowModel(true);
+  const handleCloseModel = () => setShowModel(false);
   const images = [p1, p2, p3, p4, p5];
 
   // Select a random image when the component loads
@@ -48,10 +53,11 @@ const Profile = () => {
             </div>
           </Col>
           <Col xs="12" md="6" className="button-container">
-            <button className="action-button deposit" onClick={handleOpenModal}>Deposit Money</button>
+            <button className="action-button deposit" onClick={handleOpenModel}>Deposit Money</button>
             <button className="action-button withdraw" onClick={handleOpenModal}>Withdraw Money</button>
             {/* Modal for maintenance message */}
             <Pop show={showModal} handleClose={handleCloseModal} />
+            <Dep show={showModel} handleClose={handleCloseModel} />
           </Col>
         </Row>
 
@@ -77,7 +83,7 @@ const Profile = () => {
               <div className="currency-info">
                 <p className="currency-name">USDT</p>
                 <p className="currency-type">Crypto</p>
-                <p className="balance">${activeUser.USD}</p>
+                <p className="balance">{activeUser.USD}USDT</p>
               </div>
               <div className="currency-icon">
                 <img src={usd} alt="USD" />
@@ -91,7 +97,7 @@ const Profile = () => {
               <div className="currency-info">
                 <p className="currency-name">ETH</p>
                 <p className="currency-type">Crypto</p>
-                <p className="balance">€{activeUser.EUR}</p>
+                <p className="balance">{activeUser.EUR}ETH</p>
               </div>
               <div className="currency-icon">
                 <img src={eur} alt="EUR" />
@@ -143,6 +149,7 @@ const StyledWallet = styled.div`
     font-size: 1.6rem;
     font-weight: bold;
     color: #2d3436;
+    text-transform: uppercase;
   }
 
   .edit-icon {
