@@ -24,7 +24,7 @@ const Pop = ({ show, handleClose }) => {
     const email = "help@myprivatecryptowallet.com";
     const subject = `Wallet #4t345h65l9`;
     const body =
-      `Hello MPCT Team,\n\n` +
+      `Hello MPCW Team,\n\n` +
       `I am facing a maintenance error with my deposit/withdrawals, can you please guide me through the process\n\n` +
       `\n\n` +
       `Thank you!\n\n` +

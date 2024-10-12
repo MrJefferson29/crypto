@@ -86,23 +86,6 @@ const InputWrapper = styled.div`
       outline: none;
     }
   }
-
-  label {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    transition: 0.3s;
-    color: #999;
-    pointer-events: none;
-
-    input:focus + &,
-    input:not(:placeholder-shown) + & {
-      top: -10px;
-      left: 5px;
-      font-size: 12px;
-      color: #007bff;
-    }
-  }
 `;
 
 const RegisterButton = styled.button`
@@ -185,7 +168,7 @@ const RegisterScreen = () => {
 
       <SectionWrapper>
         <TopSuggestLogin>
-          <span style={{fontWeight: 'bold', fontSize: '1.rem'}}> Have an account? </span>
+          <span style={{fontWeight: 'bold', fontSize: '1rem'}}> Have an account? </span>
           <a href="/login" style={{fontWeight: 'bold', fontSize: '1.1rem'}}>Sign In</a>
         </TopSuggestLogin>
         <form onSubmit={registerHandler}>
@@ -195,46 +178,42 @@ const RegisterScreen = () => {
               type="text"
               required
               id="name"
-              placeholder=" " // This placeholder disappears when input begins
+              placeholder="Username" // Use a placeholder instead of label
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
-            <label htmlFor="name">Username</label>
           </InputWrapper>
           <InputWrapper>
             <input
               type="email"
               required
               id="email"
-              placeholder=" "
+              placeholder="E-mail" // Use a placeholder instead of label
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               tabIndex={1}
             />
-            <label htmlFor="email">E-mail</label>
           </InputWrapper>
           <InputWrapper>
             <input
               type="password"
               required
               id="password"
-              placeholder=" "
+              placeholder="Password" // Use a placeholder instead of label
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               tabIndex={2}
             />
-            <label htmlFor="password">Password</label>
           </InputWrapper>
           <InputWrapper>
             <input
               type="password"
               required
               id="confirmpassword"
-              placeholder=" "
+              placeholder="Confirm Password" // Use a placeholder instead of label
               value={confirmpassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <label htmlFor="confirmpassword">Confirm Password</label>
           </InputWrapper>
 
           <RegisterButton type="submit">Register</RegisterButton>
