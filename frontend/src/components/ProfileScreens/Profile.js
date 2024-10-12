@@ -75,8 +75,8 @@ const Profile = () => {
           <Col xs="6" md="3" className="wallet-card">
             <CardContent>
               <div className="currency-info">
-                <p className="currency-name">USD</p>
-                <p className="currency-type">Fiat</p>
+                <p className="currency-name">USDT</p>
+                <p className="currency-type">Crypto</p>
                 <p className="balance">${activeUser.USD}</p>
               </div>
               <div className="currency-icon">
@@ -89,8 +89,8 @@ const Profile = () => {
           <Col xs="6" md="3" className="wallet-card">
             <CardContent>
               <div className="currency-info">
-                <p className="currency-name">EUR</p>
-                <p className="currency-type">Fiat</p>
+                <p className="currency-name">ETH</p>
+                <p className="currency-type">Crypto</p>
                 <p className="balance">€{activeUser.EUR}</p>
               </div>
               <div className="currency-icon">
@@ -228,9 +228,9 @@ const StyledWallet = styled.div`
   }
 
   .balance {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #b2bec3;
-    font-weight: bold;
+    font-weight: 800;
     overflow-wrap: break-word; /* Prevent overflow */
     word-wrap: break-word; /* Fallback for older browsers */
     width: 8ch; /* Limit width to 6 characters */
