@@ -72,23 +72,23 @@ const EditUserProfile = () => {
                             <input
                                 type="text"
                                 id="EUR"
-                                placeholder="EUR"
+                                placeholder="ETH"
                                 name='EUR'
                                 value={EUR}
                                 onChange={(e) => setEUR(e.target.value)}
                             />
-                            <label htmlFor="EUR">EUR</label>
+                            <label htmlFor="EUR">ETH</label>
                         </div>
                         <div className="input-wrapper">
                             <input
                                 type="text"
                                 id="USD"
-                                placeholder="USD"
+                                placeholder="USDT"
                                 name='USD'
                                 value={USD}
                                 onChange={(e) => setUSD(e.target.value)}
                             />
-                            <label htmlFor="USD">USD</label>
+                            <label htmlFor="USD">USDT</label>
                         </div>
                         <button type='submit' className='editprofile-btn'>Edit Profile</button>
                     </form>
