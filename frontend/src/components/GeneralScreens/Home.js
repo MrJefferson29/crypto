@@ -1,36 +1,33 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import "../../Css/Home.css";
 import Profile from "../ProfileScreens/Profile";
 import UserList from "./UserList";
-import CryptoPage from "./Main"; // The component you show when the user is not logged in
+import CryptoPage from "./Main";
 
 const Home = () => {
-  const search = useLocation().search;
-  const [loading, setLoading] = useState(true);
-  const { activeUser } = useContext(AuthContext);
-
-  useEffect(() => {
-    // Set loading to false once we have the activeUser information
-    if (activeUser !== undefined) {
-      setLoading(false);
-    }
-  }, [activeUser]);
+  const { activeUser, loading } = useContext(AuthContext);  // Access both activeUser and loading state
 
   const renderContent = () => {
-    if (!activeUser) {
-      return <CryptoPage />;  // Render CryptoPage when there's no activeUser
-    } else if (activeUser?.role === "admin") {
-      return <UserList />;  // Render UserList if activeUser is an admin
-    } else {
-      return <Profile />;    // Render Profile for a regular activeUser
+    if (loading) {
+      return <p>Loading...</p>;  // Still loading, show spinner
     }
+
+    if (!activeUser) {
+      return <CryptoPage />;  // No activeUser (unauthenticated), render CryptoPage
+    }
+
+    if (activeUser?.role === "admin") {
+      return <UserList />;  // Render UserList if activeUser is an admin
+    }
+
+    return <Profile />;  // Authenticated user, render Profile
   };
 
   return (
     <div className="Inclusive-home-page">
-      {loading ? <p>Loading...</p> : renderContent()} {/* Show loading spinner or content */}
+      {renderContent()}  {/* Render based on user status */}
     </div>
   );
 };
